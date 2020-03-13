@@ -12,6 +12,11 @@
 
 </style>
 <body>
+  <div id="demoDiv">
+    <p id="demoP" title="p title text">
+      some random text
+    </p>
+  </div>
 
   <script type="text/javascript">
     //document.write('This is coming from the Javascript');
@@ -20,8 +25,23 @@
     //alert('This is a user alert')
     //var demo = prompt("This is a prompt, put something in the box", "Default text");
     //document.write(demo);
-    document.write('<h1>This is a heading</h1>')
+    //document.write('<h1>This is a heading</h1>')
+    var1 = "Global variable outside the function";
+
+    function func_1(){
+      var2 = "Global variable inside function";
+      var var3 = "Local variable in the function";
+      return var3;
+    }
+
+    document.write(func_1());
+    document.write("<br />");
+    document.write(var2);
+    document.write("<br />" + var1);
+
   </script>
+
+
 </body>
 
 </html>
