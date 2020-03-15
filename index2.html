@@ -34,14 +34,19 @@
       return var3;
     }
 
+    function func_2(){
+      alert('You Clicked Me!')
+    }
+
     document.write(func_1());
     document.write("<br />");
     document.write(var2);
-    document.write("<br />" + var1);
+    document.write("<br />" + var1 + "<br /><br />");
 
   </script>
 
-
+  <button onclick="alert('Thanks for clicking')">Click Me!</button>
+  <button onclick="func_2()">Click Me!</button>
 </body>
 
 </html>
