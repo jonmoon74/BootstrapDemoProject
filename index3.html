@@ -9,14 +9,19 @@
 </head>
 
 <body>
-  <div style="background-color: orange; width:500px; height:300px;">
-
+  <div id="div1"style="background-color: orange; width:500px; height:300px;"></div>
+  <div id="div2"style="background-color: blue; width:500px; height:300px;">
   </div>
 </body>
 
 <script>
   $(document).ready(function(){
-    $('div').fadeOut();
+    //jQuery code all goes inside this function
+
+    $('div').click(function(){
+      $(this).fadeOut();
+    });
+
   })
 </script>
 </html>
