@@ -9,17 +9,21 @@
 </head>
 
 <body>
-  <div id="div1"style="background-color: orange; width:400px; height:200px;"></div>
-  <div id="div2"style="background-color: blue; width:400px; height:200px;"></div>
-  <div id="div3"style="background-color: red; width:400px; height:200px;"></div>
+  <div id="div1"style="background-color: orange; width:800px; height:50px; text-align:center; font-size:18pt;">Click to toggle blue stripe</div>
+  <div id="div2"style="background-color: blue; width:800px; height:200px; display:none;"></div>
+  <div id="div3"style="background-color: red; width:800px; height:50px;"></div>
 </body>
 
 <script>
   $(document).ready(function(){
     //jQuery code all goes inside this function
 
-    $('div').click(function(){
-      $(this).fadeOut();
+    $('#div1').click(function(){
+      $('#div2').slideToggle();
+    });
+
+    $('#div3').click(function(){
+      $(this).animate({});
     });
 
   })
