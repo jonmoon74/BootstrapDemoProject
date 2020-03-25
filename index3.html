@@ -6,12 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Learning JQuery</title>
   <script src="js/jquery.js"></script>
+  <script
+  src="http://code.jquery.com/color/jquery.color-2.1.2.min.js"
+  integrity="sha256-H28SdxWrZ387Ldn0qogCzFiUDDxfPiNIyJX7BECQkDE="
+  crossorigin="anonymous"></script>
 </head>
 
 <body>
   <div id="div1"style="background-color: orange; width:800px; height:50px; text-align:center; font-size:18pt;">Click to toggle blue stripe</div>
   <div id="div2"style="background-color: blue; width:800px; height:200px; display:none;"></div>
-  <div id="div3"style="background-color: red; width:800px; height:50px;"></div>
+  <div id="div3"style="background-color: red; width:800px; height:50px; text-align:center; font-size:18pt;">Activate Animation</div>
 </body>
 
 <script>
@@ -23,7 +27,14 @@
     });
 
     $('#div3').click(function(){
-      $(this).animate({});
+      $(this).animate({
+        height: '150px',
+        width:'400px',
+        marginLeft: '400px',
+        opacity: '0.4',
+        color: "green",
+        backgroundColor: 'green'
+      });
     });
 
   })
