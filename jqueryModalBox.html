@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JQuery Modal box example</title>
+  <script type="text/javascript"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+</head>
+<style>
+
+.popup-overlay {
+  /*Hides pop-up when there is no "active" class*/
+  font-family: Sansa Pro Black, Arial, sans-serif;
+  color: #2A295C;
+  text-align: center;
+  visibility: hidden;
+  position: absolute;
+  background: #D3D0C9CC;
+  border: 3px solid #2A295C;
+  width: 45%;
+  height: auto;
+  left: 25%;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.popup-overlay.active {
+  /*displays pop-up when "active" class is present*/
+  visibility: visible;
+  text-align: center;
+}
+
+.popup-content {
+  /*Hides pop-up content when there is no "active" class */
+  visibility: hidden;
+}
+
+.popup-content.active {
+  /*Shows pop-up content when "active" class is present */
+  visibility: visible;
+}
+
+button {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 30px;
+  margin: .20rem;
+  font-size: 1rem;
+  color: #2A295C;
+  background: ##D3D0C9;
+  border: 1px solid #2A295C;
+}
+
+button:hover {
+  border: 1px solid #2A295C;
+  background: #2A295C;
+  color: #D3D0C9;
+}
+
+</style>
+<body>
+  <!--Creates the popup body-->
+  <div class="popup-overlay">
+    <!--Creates the popup content-->
+    <div class="popup-content">
+      <h2 id="popupTitle">pop-up</h2>
+      <div id="popupMessage">message</div>
+      <div class="spacerDiv">
+        <p>
+        </p>
+      </div>
+      <!--popup's close button-->
+      <button class="close">Close</button> </div>
+    </div>
+
+    <img class="infoLogo" id="info3" src="https://i.ibb.co/4RbWPzH/information-button-sdx.png" alt="information icon that links to pop-up" title="More information"/>
+  </body>
+  <script>
+
+  var newTitle = "My New Title"
+  var newMessage = "My New Message"
+
+  var info3Message = "As we collectively start to prepare for the new normal in the post-lockdown world, we have curated a playlist of learning modules specifically intended to help you get ready to resume business, including some modules to provide you the opportunity to reflect on how things used to be and see where changes should be made in adapting to the new reality. \n\nClick the link to explore the playlist and choose modules that relate to you and your area of the business."
+
+  var info2Message = "Message 2"
+
+  var info1cMessage = "Message 1c"
+
+  var info1bMessage = "Message 1b"
+
+  var info1aMessage = "Message 1a"
+
+  $(document).ready(function(){
+    //jQuery code all goes inside this function
+
+    $('.infoLogo').bind('click', function (evt)
+    {
+      if($(this).attr('id') == 'info1a')
+      {
+        newTitle = "The Way We Work for Food Handlers";
+        newMessage = info1aMessage;
+      }
+      if($(this).attr('id') == 'info1b')
+      {
+        newTitle = "The Way We Work for Hiring Managers";
+        newMessage = info1bMessage;
+      }
+      if($(this).attr('id') == 'info1c')
+      {
+        newTitle = "The Way We Work";
+        newMessage = info1cMessage;
+      }
+      if($(this).attr('id') == 'info2')
+      {
+        newTitle = "Keeping your skills current";
+        newMessage = info2Message;
+      }
+      if($(this).attr('id') == 'info3')
+      {
+        newTitle = "Getting ready to reopen";
+        newMessage = info3Message;
+      }
+      //appends an "active" class to .popup and .popup-content when the "Open" button is clicked
+
+    });
+    $(".infoLogo").on("click", function() {
+      $(".popup-overlay, .popup-content").addClass("active");
+      $("#popupTitle").text(newTitle);
+      $("#popupMessage").text(newMessage);
+    });
+
+    //removes the "active" class to .popup and .popup-content when the "Close" button is clicked
+    $(".close, .popup-overlay").on("click", function() {
+      $(".popup-overlay, .popup-content").removeClass("active");
+    });
+  })
+
+
+  </script>
+  </html>
